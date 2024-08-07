@@ -25,3 +25,35 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes glowing-border {
+  0% {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.glowing-border {
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(
+    90deg,
+    #00f,
+    #f0f,
+    #0ff,
+    #0f0,
+    #ff0,
+    #f00,
+    #00f
+  );
+  border-image-slice: 1;
+  animation: glowing-border 2s infinite;
+}

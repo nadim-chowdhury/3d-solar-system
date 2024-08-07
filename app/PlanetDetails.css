@@ -1,0 +1,167 @@
+/* PlanetDetails.css */
+.select-prompt {
+  color: #00ff99;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.planet-details {
+  background: #1a1a1a;
+  border: 2px solid #00ff99;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Orbitron", sans-serif;
+}
+
+.planet-details::before,
+.planet-details::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.planet-name {
+  color: #00ff99;
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.planet-description {
+  color: #e0e0e0;
+  position: relative;
+  z-index: 2;
+}
+
+.planet-facts {
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes glitch {
+  0% {
+    clip: rect(20px, 9999px, 55px, 0);
+    transform: skew(0.5deg);
+  }
+  5% {
+    clip: rect(100px, 9999px, 85px, 0);
+    transform: skew(0.5deg);
+  }
+  10% {
+    clip: rect(60px, 9999px, 90px, 0);
+    transform: skew(0.5deg);
+  }
+  15% {
+    clip: rect(40px, 9999px, 65px, 0);
+    transform: skew(0.5deg);
+  }
+  20% {
+    clip: rect(80px, 9999px, 75px, 0);
+    transform: skew(0.5deg);
+  }
+  25% {
+    clip: rect(50px, 9999px, 70px, 0);
+    transform: skew(0.5deg);
+  }
+  30% {
+    clip: rect(70px, 9999px, 95px, 0);
+    transform: skew(0.5deg);
+  }
+  35% {
+    clip: rect(30px, 9999px, 80px, 0);
+    transform: skew(0.5deg);
+  }
+  40% {
+    clip: rect(90px, 9999px, 100px, 0);
+    transform: skew(0.5deg);
+  }
+  45% {
+    clip: rect(40px, 9999px, 70px, 0);
+    transform: skew(0.5deg);
+  }
+  50% {
+    clip: rect(60px, 9999px, 90px, 0);
+    transform: skew(0.5deg);
+  }
+  55% {
+    clip: rect(50px, 9999px, 95px, 0);
+    transform: skew(0.5deg);
+  }
+  60% {
+    clip: rect(30px, 9999px, 75px, 0);
+    transform: skew(0.5deg);
+  }
+  65% {
+    clip: rect(80px, 9999px, 85px, 0);
+    transform: skew(0.5deg);
+  }
+  70% {
+    clip: rect(20px, 9999px, 55px, 0);
+    transform: skew(0.5deg);
+  }
+  75% {
+    clip: rect(100px, 9999px, 85px, 0);
+    transform: skew(0.5deg);
+  }
+  80% {
+    clip: rect(60px, 9999px, 90px, 0);
+    transform: skew(0.5deg);
+  }
+  85% {
+    clip: rect(40px, 9999px, 65px, 0);
+    transform: skew(0.5deg);
+  }
+  90% {
+    clip: rect(80px, 9999px, 75px, 0);
+    transform: skew(0.5deg);
+  }
+  95% {
+    clip: rect(50px, 9999px, 70px, 0);
+    transform: skew(0.5deg);
+  }
+  100% {
+    clip: rect(70px, 9999px, 95px, 0);
+    transform: skew(0.5deg);
+  }
+}
+
+.planet-name::before,
+.planet-description::before,
+.planet-facts li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  animation: glitch 2s infinite;
+  z-index: -1;
+}
+
+.planet-name::after,
+.planet-description::after,
+.planet-facts li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: glitch 2s infinite;
+  animation-delay: 1s;
+  z-index: -1;
+}

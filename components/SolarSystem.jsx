@@ -81,7 +81,7 @@ const SolarSystem = () => {
 
   return (
     <Canvas camera={{ position: [0, 0, 40], fov: 50 }}>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={1} />
       <pointLight position={[0, 0, 0]} intensity={1.5} />
       <Stars
         radius={300}
@@ -91,7 +91,6 @@ const SolarSystem = () => {
         saturation={0}
         fade
       />
-      <Asteroid />
       <Sun textureUrl={textureUrls.sun} size={2} />
       {planets.map((planet) => (
         <Planet
@@ -104,6 +103,7 @@ const SolarSystem = () => {
           ringTextureUrl={planet.ringTextureUrl}
         />
       ))}
+      <Asteroid />
       <OrbitControls />
     </Canvas>
   );
